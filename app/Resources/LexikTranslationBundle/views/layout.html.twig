@@ -1,0 +1,28 @@
+{% extends 'ZephyrAdminCoreBundle::layout.html.twig'%}
+
+{% block stylesheets %}
+	{{ parent() }}
+    <link rel="stylesheet" href="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.css') }}">
+{% endblock %}
+{% block body_site %}
+        {% block flash_message %}
+                <div class="row">
+                    <div class="col-md-12">
+                        {% set flashes = app.session.flashbag.all() %}
+                        {% if flashes | length > 0 %}
+                            {% for type, messages in flashes %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ type }}">{{ message }}</div>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+        {% endblock flash_message %}
+		<style>.container { max-width: 100%; }</style>
+        {% block content '' %}
+{% block javascript_footer %}
+       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+       <script src="{{ asset('bundles/lexiktranslation/ng-table/ng-table.min.js') }}"></script>
+{% endblock %}
+{% endblock%}

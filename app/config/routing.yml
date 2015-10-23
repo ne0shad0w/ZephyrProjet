@@ -1,0 +1,30 @@
+admin_index:
+    resource: "@ZephyrAdminCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+membre_bundle:
+    resource: "@MembreBundle/Resources/config/routing.yml"
+
+admin_gestionpage:
+    resource: "@PageBundle/Resources/config/routing.yml"
+    prefix:   /
+
+front_index:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"    
+
+
+lexik_translation_edition:
+    resource: "@LexikTranslationBundle/Resources/config/routing.yml"
+    prefix:   /admin/traducteur
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
